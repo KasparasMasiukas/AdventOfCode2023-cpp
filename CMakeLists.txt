@@ -9,4 +9,4 @@ include_directories(include)
 add_executable(day01 day01/day01.cpp day01/day01_test.cpp)
 add_executable(day02 day02/day02.cpp day02/day02_test.cpp)
 add_executable(day03 day03/day03.cpp day03/day03_test.cpp)
-
+add_executable(day04 day04/day04.cpp day04/day04_test.cpp)
