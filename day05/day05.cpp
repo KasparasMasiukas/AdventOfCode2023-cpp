@@ -23,7 +23,7 @@ public:
                   });
     }
 
-    long long getValue(long long key) const {
+    [[nodiscard]] long long getValue(long long key) const {
         const auto it = std::upper_bound(sortedIntervals.begin(), sortedIntervals.end(), key,
                                          [](const long long key, const MappingInterval& interval) {
                                              return key < interval.keyFrom;
@@ -40,10 +40,6 @@ public:
     }
 
 private:
-    static bool intervalComparator(const MappingInterval& a, const MappingInterval& b) {
-        return a.keyFrom < b.keyFrom;
-    }
-
     std::vector<MappingInterval> sortedIntervals;
 };
 
@@ -94,10 +90,10 @@ long long trackLocation(const long long start, const std::vector<Mapping>& mappi
 }
 
 std::string Day05::solveChallenge1(std::ifstream& input) {
-    std::vector<long long> seeds = parseSeeds(input);
-    std::vector<Mapping> mappings = parseMappings(input);
+    const std::vector<long long> seeds = parseSeeds(input);
+    const std::vector<Mapping> mappings = parseMappings(input);
     long long minLocation = LONG_LONG_MAX;
-    for (long long seed: seeds) {
+    for (const long long seed: seeds) {
         const long long location = trackLocation(seed, mappings);
         if (location < minLocation) {
             minLocation = location;
@@ -108,14 +104,14 @@ std::string Day05::solveChallenge1(std::ifstream& input) {
 }
 
 std::string Day05::solveChallenge2(std::ifstream& input) {
-    std::vector<long long> seeds = parseSeeds(input);
-    std::vector<Mapping> mappings = parseMappings(input);
+    const std::vector<long long> seeds = parseSeeds(input);
+    const std::vector<Mapping> mappings = parseMappings(input);
     long long minLocation = LONG_LONG_MAX;
     for (int i = 0; i < seeds.size(); ++i) {
-        long long start = seeds[i];
-        long long length = seeds[++i];
+        const long long start = seeds[i];
+        const long long length = seeds[++i];
         for (long long seed = start; seed < start + length; ++seed) {
-            long long location = trackLocation(seed, mappings);
+            const long long location = trackLocation(seed, mappings);
             if (location < minLocation) {
                 minLocation = location;
             }
