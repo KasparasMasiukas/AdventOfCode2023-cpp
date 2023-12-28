@@ -25,7 +25,7 @@ std::string convertDigits(std::string line) {
     return line;
 }
 
-std::string Day01::solveChallenge1(std::ifstream& input) {
+std::string Day01::solveChallenge1(std::istream &input) {
     int sum = 0;
     std::string line;
     while (std::getline(input, line)) {
@@ -34,7 +34,7 @@ std::string Day01::solveChallenge1(std::ifstream& input) {
     return std::to_string(sum);
 }
 
-std::string Day01::solveChallenge2(std::ifstream& input) {
+std::string Day01::solveChallenge2(std::istream &input) {
     int sum = 0;
     std::string line;
     while (std::getline(input, line)) {

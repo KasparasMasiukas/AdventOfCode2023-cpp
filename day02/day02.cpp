@@ -58,7 +58,7 @@ Game parseGameLine(const std::string& line) {
     return gameState;
 }
 
-std::string Day02::solveChallenge1(std::ifstream& input) {
+std::string Day02::solveChallenge1(std::istream &input) {
     int sum = 0;
     std::string line;
     while (std::getline(input, line)) {
@@ -72,7 +72,7 @@ std::string Day02::solveChallenge1(std::ifstream& input) {
     return std::to_string(sum);
 }
 
-std::string Day02::solveChallenge2(std::ifstream& input) {
+std::string Day02::solveChallenge2(std::istream &input) {
     int sum = 0;
     std::string line;
     while (std::getline(input, line)) {

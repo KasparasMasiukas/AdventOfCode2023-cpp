@@ -91,7 +91,7 @@ private:
     std::vector<std::vector<std::vector<int>>> gearNumbers;
 };
 
-std::string Day03::solveChallenge1(std::ifstream& input) {
+std::string Day03::solveChallenge1(std::istream &input) {
     Schematic schematic;
     std::string line;
     while (std::getline(input, line)) {
@@ -102,7 +102,7 @@ std::string Day03::solveChallenge1(std::ifstream& input) {
     return std::to_string(sum);
 }
 
-std::string Day03::solveChallenge2(std::ifstream& input) {
+std::string Day03::solveChallenge2(std::istream &input) {
     Schematic schematic;
     std::string line;
     while (std::getline(input, line)) {

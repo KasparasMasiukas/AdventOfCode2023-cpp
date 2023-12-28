@@ -43,7 +43,7 @@ private:
     std::vector<MappingInterval> sortedIntervals;
 };
 
-std::vector<long long> parseSeeds(std::ifstream& input) {
+std::vector<long long> parseSeeds(std::istream& input) {
     std::vector<long long> seeds;
     std::string line;
     std::getline(input, line);
@@ -55,7 +55,7 @@ std::vector<long long> parseSeeds(std::ifstream& input) {
     return seeds;
 }
 
-std::vector<Mapping> parseMappings(std::ifstream& input) {
+std::vector<Mapping> parseMappings(std::istream& input) {
     std::vector<Mapping> mappings;
     std::vector<MappingInterval> currentIntervals;
     std::string line;
@@ -89,7 +89,7 @@ long long trackLocation(const long long start, const std::vector<Mapping>& mappi
     return location;
 }
 
-std::string Day05::solveChallenge1(std::ifstream& input) {
+std::string Day05::solveChallenge1(std::istream &input) {
     const std::vector<long long> seeds = parseSeeds(input);
     const std::vector<Mapping> mappings = parseMappings(input);
     long long minLocation = LONG_LONG_MAX;
@@ -103,7 +103,7 @@ std::string Day05::solveChallenge1(std::ifstream& input) {
     return std::to_string(minLocation);
 }
 
-std::string Day05::solveChallenge2(std::ifstream& input) {
+std::string Day05::solveChallenge2(std::istream &input) {
     const std::vector<long long> seeds = parseSeeds(input);
     const std::vector<Mapping> mappings = parseMappings(input);
     long long minLocation = LONG_LONG_MAX;

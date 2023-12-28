@@ -5,9 +5,9 @@
 
 class Day01 final : public Day {
 public:
-    std::string solveChallenge1(std::ifstream& input) override;
+    std::string solveChallenge1(std::istream& input) override;
 
-    std::string solveChallenge2(std::ifstream& input) override;
+    std::string solveChallenge2(std::istream& input) override;
 };
 
 #endif // DAY01_H

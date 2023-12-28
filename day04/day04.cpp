@@ -48,7 +48,7 @@ int findMatches(const std::unordered_set<int>& winningNumbers, const std::vector
     return matches;
 }
 
-std::string Day04::solveChallenge1(std::ifstream& input) {
+std::string Day04::solveChallenge1(std::istream &input) {
     int sum = 0;
     std::string line;
     while (std::getline(input, line)) {
@@ -69,7 +69,7 @@ std::string Day04::solveChallenge1(std::ifstream& input) {
     return std::to_string(sum);
 }
 
-std::string Day04::solveChallenge2(std::ifstream& input) {
+std::string Day04::solveChallenge2(std::istream &input) {
     std::vector<int> cards;
     int sum = 0;
     int i = 0;

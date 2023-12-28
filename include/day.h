@@ -10,13 +10,13 @@ class Day {
 public:
     virtual ~Day() = default;
 
-    virtual std::string solveChallenge1(std::ifstream& input) = 0;
+    virtual std::string solveChallenge1(std::istream &input) = 0;
 
-    virtual std::string solveChallenge2(std::ifstream& input) = 0;
+    virtual std::string solveChallenge2(std::istream &input) = 0;
 
-    void testAndRunChallenges(const std::string& testFilePath1, const std::string& expectedTestResult1,
-                              const std::string& testFilePath2, const std::string& expectedTestResult2,
-                              const std::string& inputFilePath) {
+    void testAndRunChallenges(const std::string &testFilePath1, const std::string &expectedTestResult1,
+                              const std::string &testFilePath2, const std::string &expectedTestResult2,
+                              const std::string &inputFilePath) {
         // Test and Run Challenge 1
         testAndRunSingleChallenge(testFilePath1, expectedTestResult1, inputFilePath, &Day::solveChallenge1,
                                   "Challenge 1");
@@ -27,10 +27,10 @@ public:
     }
 
 private:
-    void testAndRunSingleChallenge(const std::string& testFilePath, const std::string& expectedTestResult,
-                                   const std::string& inputFilePath,
-                                   std::string (Day::*challengeSolver)(std::ifstream&),
-                                   const std::string& challengeName) {
+    void testAndRunSingleChallenge(const std::string &testFilePath, const std::string &expectedTestResult,
+                                   const std::string &inputFilePath,
+                                   std::string (Day::*challengeSolver)(std::istream &),
+                                   const std::string &challengeName) {
         std::ifstream testFile(testFilePath);
         if (!testFile.is_open()) {
             throw std::runtime_error("Failed to open test file: " + testFilePath);

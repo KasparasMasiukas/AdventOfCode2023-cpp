@@ -44,7 +44,7 @@ namespace {
     }
 }
 
-std::string Day06::solveChallenge1(std::ifstream& input) {
+std::string Day06::solveChallenge1(std::istream &input) {
     std::string line;
     std::getline(input, line);
     const std::vector<int> times = parseLine(line);
@@ -61,7 +61,7 @@ std::string Day06::solveChallenge1(std::ifstream& input) {
     return std::to_string(product);
 }
 
-std::string Day06::solveChallenge2(std::ifstream& input) {
+std::string Day06::solveChallenge2(std::istream &input) {
     std::string line;
     std::getline(input, line);
     const std::vector<int> times = parseLine(line);

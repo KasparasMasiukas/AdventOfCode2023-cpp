@@ -52,7 +52,7 @@ private:
     std::unordered_map<std::string, Node> nodes;
 };
 
-DesertMap parseInput(std::ifstream &inputFile) {
+DesertMap parseInput(std::istream &inputFile) {
     std::string instructions;
     std::unordered_map<std::string, Node> nodes;
     const std::regex nodePattern(R"(^(\w+)\s*=\s*\((\w+),\s*(\w+)\)$)");
@@ -72,7 +72,7 @@ DesertMap parseInput(std::ifstream &inputFile) {
     return {instructions, nodes};
 }
 
-std::string Day08::solveChallenge1(std::ifstream &input) {
+std::string Day08::solveChallenge1(std::istream &input) {
     int i = 0;
     auto desertMap = parseInput(input);
     std::string currentNode = "AAA";
@@ -83,7 +83,7 @@ std::string Day08::solveChallenge1(std::ifstream &input) {
     return std::to_string(i);
 }
 
-std::string Day08::solveChallenge2(std::ifstream &input) {
+std::string Day08::solveChallenge2(std::istream &input) {
     auto desertMap = parseInput(input);
     std::vector<std::string> currentNodes = desertMap.getStartingNodes();
     std::vector<int> loopLengths;

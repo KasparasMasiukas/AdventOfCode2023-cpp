@@ -105,7 +105,7 @@ public:
     }
 };
 
-std::vector<Hand> parseAndSortHands(std::ifstream &input) {
+std::vector<Hand> parseAndSortHands(std::istream &input) {
     std::string hand;
     int bid;
     std::vector<Hand> hands;
@@ -116,7 +116,7 @@ std::vector<Hand> parseAndSortHands(std::ifstream &input) {
     return hands;
 }
 
-std::string Day07::solveChallenge1(std::ifstream &input) {
+std::string Day07::solveChallenge1(std::istream &input) {
     jokerMode = false;
     long long sum = 0;
     const std::vector<Hand> hands = parseAndSortHands(input);
@@ -128,7 +128,7 @@ std::string Day07::solveChallenge1(std::ifstream &input) {
     return std::to_string(sum);
 }
 
-std::string Day07::solveChallenge2(std::ifstream &input) {
+std::string Day07::solveChallenge2(std::istream &input) {
     jokerMode = true;
     long long sum = 0;
     const std::vector<Hand> hands = parseAndSortHands(input);
